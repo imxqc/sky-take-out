@@ -23,6 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import java.beans.beancontext.BeanContext;
 import java.time.LocalDateTime;
 
 @Service
@@ -123,5 +124,33 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .build();
 
         employeeMapper.update(emp);
+    }
+
+    /**
+     * 根据id查询员工
+     * @param id
+     * @return
+     */
+    @Override
+    public Employee getById(long id) {
+        Employee emp = employeeMapper.getById(id);
+        //密码设为*加强安全性
+        emp.setPassword("****");
+        return emp;
+    }
+
+    /**
+     * 编辑员工信息
+     * @param employeeDTO
+     */
+    @Override
+    public void update(EmployeeDTO employeeDTO) {
+        Employee employee = new Employee();
+        BeanUtils.copyProperties(employeeDTO,employee);
+        employee.setUpdateUser(BaseContext.getCurrentId());
+        employee.setUpdateTime(LocalDateTime.now());
+
+        employeeMapper.update(employee);
+
     }
 }
