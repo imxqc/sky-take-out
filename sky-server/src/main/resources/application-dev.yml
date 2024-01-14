@@ -6,3 +6,8 @@ sky:
     database: sky_take_out
     username: cqx
     password: tinashe333
+  alioss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    access-key-id: LTAI5tHLGZikYwQR9X8niBJi
+    access-key-secret: UvcyxNkJIU82ItLUmX3aiQGL68lVYF
+    bucket-name: sky-take-ki
