@@ -24,4 +24,10 @@ public interface DishService {
      * @return
      */
     PageResult page(DishPageQueryDTO dto);
+
+    /**
+     * 删除菜品
+     * @param ids
+     */
+    void deleteBatch(List<Long> ids);
 }

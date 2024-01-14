@@ -23,11 +23,33 @@ public interface DishMapper {
     @Select("select count(id) from dish where category_id = #{categoryId}")
     Integer countByCategoryId(Long categoryId);
 
+    /**
+     * 插入数据
+     * @param dish
+     */
     @AutoFill(value = OperationType.INSERT)
     void insert(Dish dish);
 
-    @AutoFill(value = OperationType.INSERT)
-    void insertBatch(List<DishFlavor> flavors);
 
+
+    /**
+     * 根据菜品获取相关联的信息
+     * @param dto
+     * @return
+     */
     Page<DishVO> page(DishPageQueryDTO dto);
+
+    /**
+     * 根据id获取dish信息
+     * @param id
+     * @return
+     */
+    @Select("select * from dish where id = #{id}")
+    Dish getById(Long id);
+
+    /**
+     * 批量删除菜品
+     * @param ids
+     */
+    void deleteBatch(List<Long> ids);
 }
