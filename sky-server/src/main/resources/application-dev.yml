@@ -11,3 +11,11 @@ sky:
     access-key-id: LTAI5tHLGZikYwQR9X8niBJi
     access-key-secret: UvcyxNkJIU82ItLUmX3aiQGL68lVYF
     bucket-name: sky-take-ki
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    database: 1
+  wechat:
+      appid: wx79e3c0d1a37c6fb5
+      secret: 89ec97e0d6212aec78260faffec61774

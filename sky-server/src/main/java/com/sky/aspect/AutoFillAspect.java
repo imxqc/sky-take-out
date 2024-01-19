@@ -46,7 +46,7 @@ public class AutoFillAspect {
         //获取实体类对象
         Object[] args = joinPoint.getArgs();
         //解决错误
-        if (args[0] != null && args.length != 0) {
+        if (args[0] == null || args.length == 0) {
             return;
         }
         Object entity = args[0];
@@ -78,6 +78,5 @@ public class AutoFillAspect {
                 throw new RuntimeException(e);
             }
         }
-
     }
 }

@@ -19,7 +19,6 @@ public interface DishFlavorMapper {
      * 批量插入数据
      * @param flavors
      */
-    @AutoFill(value = OperationType.INSERT)
     void insertBatch(List<DishFlavor> flavors);
 
     /**
