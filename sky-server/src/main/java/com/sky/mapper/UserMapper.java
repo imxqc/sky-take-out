@@ -10,6 +10,7 @@ import com.sky.vo.DishVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Mapper
@@ -28,4 +29,14 @@ public interface UserMapper {
      */
     @AutoFill(OperationType.INSERT)
     void insert(User user);
+
+    @Select("select * from user where id = #{id}")
+    User getById(Long userId);
+
+    /**
+     * 通过map获得user数据
+     * @param map
+     * @return
+     */
+    Integer countUserByMap(HashMap map);
 }
