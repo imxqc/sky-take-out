@@ -1,5 +1,5 @@
 ## 登录页
-![](sky-server/src/main/resources/assets/员工管理.png)
+![](sky-server/src/main/resources/assets/登录.png)
 
 
 ## 工作台
